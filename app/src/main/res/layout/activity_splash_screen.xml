@@ -15,17 +15,18 @@
         android:layout_gravity="center"/>
 
     <TextView
+        android:id="@+id/splash_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal \nPortfolio"
-        android:id="@+id/splash_text"
-        android:textSize="25sp"
-        android:fontFamily="@font/r_regular"
-        android:lineSpacingExtra="4dp"
-        android:textColor="@color/grey"
+        android:layout_gravity="bottom"
         android:layout_marginBottom="100dp"
-        android:textStyle="bold"
+        android:fontFamily="@font/raleway"
         android:gravity="center"
-        android:layout_gravity="bottom"/>
+        android:lineSpacingExtra="4dp"
+        android:text="Personal \nPortfolio"
+        android:textAllCaps="true"
+        android:textColor="@color/grey"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 </android.support.design.widget.CoordinatorLayout>

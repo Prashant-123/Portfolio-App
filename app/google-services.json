@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "226108244001",
+    "firebase_url": "https://portfolio-af693.firebaseio.com",
+    "project_id": "portfolio-af693",
+    "storage_bucket": "portfolio-af693.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226108244001:android:9b6b93e89a6a1bb8",
+        "android_client_info": {
+          "package_name": "com.prashant.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226108244001-cnbqu8n4dde4s93ogc24vgck4rg81h7c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prashant.portfolio",
+            "certificate_hash": "6bb9cbd5ab3f81e0b1ec4f13034f55853da0399c"
+          }
+        },
+        {
+          "client_id": "226108244001-kkak3be1ueqfc5abus7df244sfnr5qne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQVwJ4wV7HiEnPC0DuOrTtQ6AbW-VASC4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226108244001-kkak3be1ueqfc5abus7df244sfnr5qne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

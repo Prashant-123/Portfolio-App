@@ -8,6 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+        <item name="spinBars">true</item>
+        <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
     </style>
+
+    <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/black</item>
+    </style>
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+    </style>
+
 
 </resources>

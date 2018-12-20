@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/aboutme"
+            android:icon="@drawable/ic_aboutme"
+            android:title="About Me"/>
+        <item
+            android:id="@+id/education"
+            android:icon="@drawable/ic_education"
+            android:title="Education"
+            />
+        <item
+            android:id="@+id/workex"
+            android:icon="@drawable/ic_work_ex"
+            android:title="Work Experience"
+            />
+        <item
+            android:id="@+id/projects"
+            android:icon="@drawable/ic_project"
+            android:title="Projects"
+            />
+        <item
+            android:id="@+id/skills"
+            android:icon="@drawable/ic_skills"
+            android:title="Technical Skills"
+            />
+
+        <item
+            android:id="@+id/training"
+            android:icon="@drawable/ic_training"
+            android:title="Training &amp; Courses"
+            />
+        <item
+            android:id="@+id/awards"
+            android:icon="@drawable/ic_award"
+            android:title="Awards &amp; Achievements"
+            />
+        <item
+            android:id="@+id/por"
+            android:icon="@drawable/ic_por"
+            android:title="Positions of Responsibility"
+            />
+  </group>
+
+    <item android:title="Connect with Me">
+        <menu>
+            <item android:id="@+id/message"
+                android:title="Message"
+                android:icon="@drawable/ic_whatsapp"/>
+            <item android:id="@+id/mail"
+                android:title="Email"
+                android:icon="@drawable/ic_email"/>
+        </menu>
+    </item>
+
+</menu>

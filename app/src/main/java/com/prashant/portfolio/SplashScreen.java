@@ -1,5 +1,6 @@
 package com.prashant.portfolio;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
-        splashText.setLetterSpacing((float) 0.1);
+        startActivity(new Intent(this, MainActivity.class));
 
     }
 }
