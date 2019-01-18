@@ -18,8 +18,6 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
-
         startActivity(new Intent(this, MainActivity.class));
-
     }
 }

@@ -37,7 +37,7 @@
         android:layout_gravity="start"
         android:background="@android:color/white"
         android:fitsSystemWindows="true"
-        app:itemBackground="@android:color/white"
+        app:itemTextColor="@drawable/drawer_selecter"
         app:headerLayout="@layout/navheader"
         app:menu="@menu/menu_navigation"
         app:itemTextAppearance="@style/NavigationDrawerStyle"/>

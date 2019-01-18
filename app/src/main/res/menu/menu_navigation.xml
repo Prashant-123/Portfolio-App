@@ -16,16 +16,6 @@
             android:icon="@drawable/ic_work_ex"
             android:title="Work Experience"
             />
-        <item
-            android:id="@+id/projects"
-            android:icon="@drawable/ic_project"
-            android:title="Projects"
-            />
-        <item
-            android:id="@+id/skills"
-            android:icon="@drawable/ic_skills"
-            android:title="Technical Skills"
-            />
 
         <item
             android:id="@+id/training"

@@ -1,14 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <android.support.design.card.MaterialCardView
+                android:id="@+id/image"
+                android:layout_width="160dp"
+                android:layout_height="210dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/transparent"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/me"
+                    app:riv_border_color="#4a034b"
+                    app:riv_border_width="2dip"
+                    app:riv_corner_radius="5dp" />
+
+            </android.support.design.card.MaterialCardView>
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/divider"
+                android:elevation="10dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image" />
+
+            <TextView
+                android:id="@+id/projects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/futura"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tvProjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/futura"
+                android:text="New Projects"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/projects"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/skills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/futura"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvSkills"
+                app:layout_constraintTop_toTopOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/tvSkills"
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/futura"
+                android:text="New Skills"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                android:id="@+id/thisMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="10dp"
+                android:text="this month"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@+id/projects"
+                app:layout_constraintTop_toBottomOf="@+id/tvProjects" />
+
+
+            <TextView
+                android:id="@+id/thisWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="10dp"
+                android:text="this week"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="@+id/skills"
+                app:layout_constraintTop_toBottomOf="@+id/tvSkills" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/cv_card"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:layout_constraintBottom_toTopOf="@+id/skills_card"
+                app:layout_constraintEnd_toStartOf="@+id/projects_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thisMonth"
+                app:icon="@drawable/ic_cv"
+                app:strokeWidth="0dp"
+                android:paddingLeft="40dp"
+                app:iconSize="80dp"
+                app:rippleColor="@color/white"
+                app:iconTintMode="src_over"
+                app:iconTint="@null" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/projects_card"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:layout_constraintBottom_toTopOf="@+id/activity_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cv_card"
+                app:layout_constraintTop_toBottomOf="@+id/thisMonth"
+                app:icon="@drawable/ic_projects"
+                app:strokeWidth="0dp"
+                android:paddingLeft="45dp"
+                app:iconSize="80dp"
+                app:rippleColor="@color/white"
+                app:iconTintMode="src_over"
+                app:iconTint="@null" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/skills_card"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="50dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/activity_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:icon="@drawable/ic_skills_home"
+                app:strokeWidth="0dp"
+                android:paddingLeft="45dp"
+                app:iconSize="80dp"
+                app:rippleColor="@color/white"
+                app:iconTintMode="src_over"
+                app:iconTint="@null"/>
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/activity_card"
+                android:layout_width="160dp"
+                android:layout_height="130dp"
+                android:layout_marginBottom="50dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/skills_card"
+                app:icon="@drawable/ic_books"
+                app:strokeWidth="0dp"
+                android:paddingLeft="45dp"
+                app:iconSize="80dp"
+                app:rippleColor="@color/white"
+                app:iconTintMode="src_over"
+                app:iconTint="@null" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/futura"
+                android:text="Curriculum Vitae"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/skills_card"
+                app:layout_constraintEnd_toEndOf="@+id/cv_card"
+                app:layout_constraintStart_toStartOf="@+id/cv_card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/futura"
+                android:text="My Projects"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/activity_card"
+                app:layout_constraintEnd_toEndOf="@+id/projects_card"
+                app:layout_constraintStart_toStartOf="@+id/projects_card" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:fontFamily="@font/futura"
+                android:text="Skill Set"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/skills_card"
+                app:layout_constraintStart_toStartOf="@+id/skills_card"
+                app:layout_constraintTop_toTopOf="@+id/skills_card" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:fontFamily="@font/futura"
+                android:text="Other Activities &amp; Interests"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/activity_card"
+                app:layout_constraintStart_toStartOf="@+id/activity_card"
+                app:layout_constraintTop_toTopOf="@+id/activity_card" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </FrameLayout>

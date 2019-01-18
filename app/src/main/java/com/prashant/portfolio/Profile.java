@@ -12,6 +12,7 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View myView = inflater.inflate(R.layout.fragment_profile, container, false);
+
         return myView;
     }
 }
