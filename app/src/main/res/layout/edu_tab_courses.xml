@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Courses"
+    android:textColor="@color/white"
+    android:fontFamily="@font/futura_medium"
+    android:textSize="22sp"
+    android:textStyle="bold"
+    android:drawableStart="@drawable/ic_online_course"
+    android:padding="10dp"
+    android:drawablePadding="10dp">
+
+</TextView>

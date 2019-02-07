@@ -32,9 +32,9 @@
 
                 <com.makeramen.roundedimageview.RoundedImageView
                     android:layout_width="match_parent"
+                    android:id="@+id/display_image"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/me"
                     app:riv_border_color="#4a034b"
                     app:riv_border_width="2dip"
                     app:riv_corner_radius="5dp" />
@@ -63,7 +63,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/futura"
-                android:text="7"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
@@ -90,7 +90,7 @@
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/futura"
-                android:text="4"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:textStyle="bold"
@@ -151,7 +151,6 @@
                 android:paddingLeft="40dp"
                 app:iconSize="80dp"
                 app:rippleColor="@color/white"
-                app:iconTintMode="src_over"
                 app:iconTint="@null" />
 
             <android.support.design.button.MaterialButton
@@ -264,6 +263,69 @@
                 app:layout_constraintEnd_toEndOf="@+id/activity_card"
                 app:layout_constraintStart_toStartOf="@+id/activity_card"
                 app:layout_constraintTop_toTopOf="@+id/activity_card" />
+
+            <TextView
+                android:id="@+id/display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/futura"
+                android:text="Prashant"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/futura"
+                android:text="Android Developer"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/display_name"
+                app:layout_constraintTop_toBottomOf="@+id/display_name" />
+
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Level: Intermediate"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/position"
+                app:layout_constraintTop_toBottomOf="@+id/position" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/futura"
+                android:text="Delhi, IN"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/level"
+                app:layout_constraintTop_toBottomOf="@+id/level" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/follow"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="30dp"
+                app:icon="@drawable/ic_follow"
+                app:iconSize="50dp"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location"
+                app:rippleColor="@color/white"
+                app:strokeWidth="0dp" />
 
         </android.support.constraint.ConstraintLayout>
 

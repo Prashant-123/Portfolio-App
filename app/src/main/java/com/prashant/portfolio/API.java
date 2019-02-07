@@ -5,6 +5,6 @@ import retrofit2.http.GET;
 
 public interface API {
 
-    @GET("/")
-    Call<User> fetch();
+    @GET("/about")
+    Call<User> aboutMe();
 }

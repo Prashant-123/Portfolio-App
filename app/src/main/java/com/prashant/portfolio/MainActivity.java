@@ -1,6 +1,6 @@
 package com.prashant.portfolio;
 
-import android.os.AsyncTask;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,10 +14,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.GsonBuilder;
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.prashant.portfolio.Education.Education;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,28 +36,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
     @BindView(R.id.drawerLayout)
     DrawerLayout drawer;
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
-    public static User user;
 
+    public static User user;
     ImageView blur_image, user_image;
     ActionBarDrawerToggle toggle;
     public static String TAG = "TAG";
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FetchData();
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         setNavigationDrawer();
-        navigationView.getMenu().getItem(0).setChecked(true);
-        setHeaderImage();
         onNavigationItemSelected(navigationView.getMenu().getItem(0));
-        FetchData();
     }
 
     @Override
@@ -89,10 +90,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         displayScreens(R.id.aboutme);
     }
 
-    public void setHeaderImage() {
-
-    }
-
     private void displayScreens(int itemId) {
 
         //creating fragment object
@@ -103,15 +100,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.aboutme:
                 fragment = new Profile();
                 toolbar.setTitle("Profile");
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.education:
-                fragment = new Profile();
-                toolbar.setTitle("Profile");
+                fragment = new Education();
+                toolbar.setTitle("My Educaiton");
                 break;
             case R.id.workex:
-                fragment = new Profile();
-                toolbar.setTitle("Profile");
+                fragment = new WorkEx();
+                toolbar.setTitle("Work Experience");
+                break;
+            case R.id.training:
+                fragment = new Training();
+                toolbar.setTitle("Training & Courses");
+                break;
+            case R.id.awards:
+                fragment = new Awards();
+                toolbar.setTitle("Achievements");
+                break;
+            case R.id.por:
+                fragment = new PoR();
+                toolbar.setTitle("Responsibilities");
                 break;
         }
 
@@ -126,18 +134,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void FetchData() {
+        ShowProgressBar();
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
         API profile = retrofit.create(API.class);
-        Call<User> call = profile.fetch();
+        Call<User> call = profile.aboutMe();
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+                HideProgressBar();
+                navigationView.getMenu().getItem(0).setChecked(true);
+
                 user = response.body();
-                Log.i(TAG, user.getImg());
-                Glide.with(MainActivity.this).load(user.img)
+                Glide.with(MainActivity.this).load(user.profile_pic)
                         .apply(bitmapTransform(new BlurTransformation(20, 1))).into(blur_image);
-                Glide.with(MainActivity.this).load(user.img).into(user_image);
+                Glide.with(MainActivity.this).load(user.profile_pic).into(user_image);
             }
 
             @Override
@@ -145,5 +156,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.i(TAG, t.getMessage());
             }
         });
+    }
+
+    public void ShowProgressBar() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+    }
+
+    public void HideProgressBar() {
+        if (progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
     }
 }
