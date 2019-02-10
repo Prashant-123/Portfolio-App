@@ -37,6 +37,7 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:3.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
 
     //    Retrofit & Helpers
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'

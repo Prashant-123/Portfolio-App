@@ -14,13 +14,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.GsonBuilder;
-import com.makeramen.roundedimageview.RoundedImageView;
+import com.prashant.portfolio.AboutMe.Profile;
 import com.prashant.portfolio.Education.Education;
-
+import com.prashant.portfolio.AboutMe.AboutMeDC;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jp.wasabeef.glide.transformations.BlurTransformation;
@@ -41,11 +40,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
-    public static User user;
+    public static AboutMeDC aboutmeDC;
     ImageView blur_image, user_image;
     ActionBarDrawerToggle toggle;
     public static String TAG = "TAG";
-
     ProgressDialog progressDialog;
 
     @Override
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
         setNavigationDrawer();
-        onNavigationItemSelected(navigationView.getMenu().getItem(0));
+//        onNavigationItemSelected(navigationView.getMenu().getItem(0));
     }
 
     @Override
@@ -87,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.setDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
         toggle.syncState();
-        displayScreens(R.id.aboutme);
     }
 
     private void displayScreens(int itemId) {
@@ -138,21 +135,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
         API profile = retrofit.create(API.class);
-        Call<User> call = profile.aboutMe();
-        call.enqueue(new Callback<User>() {
+        Call<AboutMeDC> call = profile.aboutMe();
+        call.enqueue(new Callback<AboutMeDC>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<AboutMeDC> call, Response<AboutMeDC> response) {
+
+                displayScreens(R.id.aboutme);
+
                 HideProgressBar();
                 navigationView.getMenu().getItem(0).setChecked(true);
-
-                user = response.body();
-                Glide.with(MainActivity.this).load(user.profile_pic)
+                aboutmeDC = response.body();
+                Glide.with(MainActivity.this).load(aboutmeDC.profile_pic)
                         .apply(bitmapTransform(new BlurTransformation(20, 1))).into(blur_image);
-                Glide.with(MainActivity.this).load(user.profile_pic).into(user_image);
+                Glide.with(MainActivity.this).load(aboutmeDC.profile_pic).into(user_image);
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<AboutMeDC> call, Throwable t) {
                 Log.i(TAG, t.getMessage());
             }
         });

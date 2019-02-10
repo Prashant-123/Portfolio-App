@@ -1,21 +1,19 @@
-package com.prashant.portfolio;
+package com.prashant.portfolio.AboutMe;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.prashant.portfolio.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.prashant.portfolio.MainActivity.TAG;
-import static com.prashant.portfolio.MainActivity.user;
+import static com.prashant.portfolio.MainActivity.aboutmeDC;
 
 public class Profile extends Fragment {
     public Profile() {}
@@ -37,18 +35,14 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View myView = inflater.inflate(R.layout.fragment_profile, container, false);
-        ButterKnife.bind(myView);
+        ButterKnife.bind(this, myView);
 
-//        Glide.with(getContext()).load(user.profile_pic).into(dp);
-//        name.setText(user.name);
-//        position.setText(user.name);
-//        level.setText(user.name);
-//        projects.setText(user.name);
-//        skills.setText(user.name);
-
-        Log.i(TAG, "onCreateView: " + user);
-
-
+        Glide.with(getContext()).load(aboutmeDC.getProfile_pic()).into(dp);
+        name.setText(aboutmeDC.getName());
+        position.setText(aboutmeDC.getPost());
+        level.setText("Level: " + aboutmeDC.getLevel());
+        projects.setText(aboutmeDC.getNew_projects());
+        skills.setText(aboutmeDC.getNew_skills());
 
         return myView;
     }

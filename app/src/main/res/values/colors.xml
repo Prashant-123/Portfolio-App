@@ -11,4 +11,8 @@
     <color name="follow_btn_color">#2196F3</color>
     <color name="overlay">#60000000</color>
 
+    <color name="degree_overlay">#6B1F44CC</color>
+    <color name="year_overlay">#6B1FCC22</color>
+
+
 </resources>

@@ -1,9 +1,9 @@
-package com.prashant.portfolio;
+package com.prashant.portfolio.AboutMe;
 
-class User {
-    String name, level, new_projects, new_skills, post, profile_pic;
+public class AboutMeDC {
+    public String name, level, new_projects, new_skills, post, profile_pic;
 
-    public User() {}
+    public AboutMeDC() {}
 
     public void setName(String name) {
         this.name = name;
@@ -53,7 +53,7 @@ class User {
         return profile_pic;
     }
 
-    public User(String name, String level, String new_projects, String new_skills, String post, String profile_pic) {
+    public AboutMeDC(String name, String level, String new_projects, String new_skills, String post, String profile_pic) {
         this.name = name;
         this.level = level;
         this.new_projects = new_projects;
