@@ -12,9 +12,6 @@
         <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
     </style>
 
-    <style name="ButtonBG" parent="Theme.AppCompat.Light.NoActionBar">
-    </style>
-
     <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/black</item>

@@ -136,4 +136,5 @@
             android:src="@drawable/me"></com.makeramen.roundedimageview.RoundedImageView>
 
     </android.support.v7.widget.CardView>
+
 </android.support.constraint.ConstraintLayout>

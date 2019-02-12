@@ -18,14 +18,9 @@
             />
 
         <item
-            android:id="@+id/training"
-            android:icon="@drawable/ic_training"
-            android:title="Training &amp; Courses"
-            />
-        <item
-            android:id="@+id/awards"
-            android:icon="@drawable/ic_award"
-            android:title="Awards &amp; Achievements"
+            android:id="@+id/projects"
+            android:icon="@drawable/ic_projects"
+            android:title="Projects"
             />
         <item
             android:id="@+id/por"
@@ -36,7 +31,7 @@
 
     <item android:title="Connect with Me">
         <menu>
-            <item android:id="@+id/message"
+            <item android:id="@+id/whatsapp"
                 android:title="Message"
                 android:icon="@drawable/ic_whatsapp"/>
             <item android:id="@+id/mail"

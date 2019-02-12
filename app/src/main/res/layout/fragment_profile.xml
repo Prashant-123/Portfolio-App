@@ -57,7 +57,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/image" />
 
             <TextView
-                android:id="@+id/projects"
+                android:id="@+id/no_of_projects"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -80,7 +80,7 @@
                 android:text="New Projects"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/projects"
+                app:layout_constraintStart_toEndOf="@+id/no_of_projects"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
             <TextView
@@ -119,7 +119,7 @@
                 android:text="this month"
                 android:textColor="@color/white"
                 android:textSize="13sp"
-                app:layout_constraintStart_toEndOf="@+id/projects"
+                app:layout_constraintStart_toEndOf="@+id/no_of_projects"
                 app:layout_constraintTop_toBottomOf="@+id/tvProjects" />
 
 
@@ -164,7 +164,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cv_card"
                 app:layout_constraintTop_toBottomOf="@+id/thisMonth"
-                app:icon="@drawable/ic_projects"
+                app:icon="@drawable/ic_award"
                 app:strokeWidth="0dp"
                 android:paddingLeft="45dp"
                 app:iconSize="80dp"
@@ -225,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:fontFamily="@font/futura"
-                android:text="My Projects"
+                android:text="Awards &amp; Achievements"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"

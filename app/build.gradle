@@ -16,6 +16,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
 }
 
 dependencies {
@@ -38,6 +39,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
+    implementation 'com.github.javiersantos:MaterialStyledDialogs:2.1'
+    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
 
     //    Retrofit & Helpers
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
