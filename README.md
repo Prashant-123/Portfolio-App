@@ -1,5 +1,5 @@
 ## My Personal Portfolio App
- Portfolio app developed using Material Design and Android.
+ Portfolio app developed using Material Design and Android, describing my work experience, recent projects, skill set, education and much more.
  
  
  
