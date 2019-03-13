@@ -8,8 +8,19 @@
     <string name="year_of_passing">Year of Passing</string>
     <string name="board">Education Board</string>
 
+    <string name="awards">Awards &amp; Achievements</string>
+
+    <string name="int_1">Machine Learning and AI</string>
+    <string name="int_2">Hackathons</string>
+    <string name="int_3">Travelling</string>
+    <string name="int_4">Open Source Contribution</string>
+    <string name="int_5">Testing custom mobile ROMs</string>
+
     <string name="view_cv">View PDF</string>
     <string name="cancel">Cancel</string>
     <string name="cv">Curriculam Vitae</string>
+    <string name="big_text">The goal of a hackathon is to create usable software or hardware with the goal of creating a functioning product by the end of the event.</string>
+    <string name="skill_set">Skill Set</string>
+    <string name="interests"><![CDATA[Other Activities & Interests]]></string>
 
 </resources>

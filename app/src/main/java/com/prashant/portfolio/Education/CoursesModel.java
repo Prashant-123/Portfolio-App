@@ -1,10 +1,8 @@
 package com.prashant.portfolio.Education;
 
-public class CoursesDC {
+public class CoursesModel {
 
-    String name, type, institution, instructor, status;
-
-    public CoursesDC() {}
+    String name, image, institution, instructor;
 
     public String getName() {
         return name;
@@ -14,12 +12,12 @@ public class CoursesDC {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getImage() {
+        return image;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getInstitution() {
@@ -38,19 +36,12 @@ public class CoursesDC {
         this.instructor = instructor;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public CoursesDC(String name, String type, String institution, String instructor, String status) {
+    public CoursesModel(String name, String image, String institution, String instructor) {
         this.name = name;
-        this.type = type;
+        this.image = image;
         this.institution = institution;
         this.instructor = instructor;
-        this.status = status;
     }
+
+    public CoursesModel() {}
 }

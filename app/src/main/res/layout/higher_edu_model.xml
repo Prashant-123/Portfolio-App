@@ -11,8 +11,8 @@
     <android.support.v7.widget.CardView
         android:id="@+id/main_card"
         android:layout_width="0dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="70dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
@@ -22,8 +22,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="75dp"
             android:orientation="vertical">
 
@@ -43,7 +43,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/black"
                 android:id="@+id/course"
-                android:fontFamily="@font/futura_medium"
+                android:fontFamily="@font/open_sans_semibold"
                 android:text="B.Sc(H) Computer Science"/>
 
             <LinearLayout
@@ -102,13 +102,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/futura_medium"
-                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/performance"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textStyle="italic"
                 android:layout_marginTop="10dp"
+                android:padding="5dp"
                 android:background="@drawable/border"
-                android:padding="8dp"
                 android:id="@+id/performance"
                 android:text="Performance:  8.8 CGPA"/>
 
@@ -116,25 +116,17 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/pic_card"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="@android:color/darker_gray"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/main_card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/main_card">
-
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/high_ed_pic_model"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:elevation="10dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/me"></com.makeramen.roundedimageview.RoundedImageView>
+            app:riv_corner_radius="15dp"
+            android:src="@drawable/me"
+            app:layout_constraintBottom_toBottomOf="@+id/main_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_card"/>
 
-    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>

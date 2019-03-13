@@ -11,44 +11,61 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.GsonBuilder;
 import com.prashant.portfolio.R;
+import com.prashant.portfolio.Utils.API;
+import com.prashant.portfolio.Utils.ApiClient;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HigherStudies extends Fragment {
 
-    public static HigherStudiesDC newInstance() {
-        return new HigherStudiesDC();
+    public static HigherStudiesModel newInstance() {
+        return new HigherStudiesModel();
     }
     @BindView(R.id.rv)
     RecyclerView rv;
 
     HighEduAdapter adapter;
-    ArrayList<HigherStudiesDC> list = new ArrayList<>();
+    public static List<HigherStudiesModel> hst_list = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.recycler_view, container, false);
         ButterKnife.bind(this, view);
 
-        HigherStudiesDC data = new HigherStudiesDC("SSCBS", "B.Sc(H) Computer Science", "Under-Graduation", "2016-2019", "Performance:  8.8 CGPA", "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png");
-        list.add(data);
-        list.add(data);
-        list.add(data);
-//        list.add(data);
-//        list.add(data);
-//        list.add(data);
-//        list.add(data);
+        hst_list.clear();
 
-        rv.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
-        rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new HighEduAdapter(getActivity(), list);
-        rv.setItemAnimator(new DefaultItemAnimator());
-        rv.setAdapter(adapter);
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
+        API profile = retrofit.create(API.class);
+        final Call<List<HigherStudiesModel>> hst = profile.hst();
+        hst.enqueue(new Callback<List<HigherStudiesModel>>() {
+            @Override
+            public void onResponse(Call<List<HigherStudiesModel>> call, Response<List<HigherStudiesModel>> response) {
+                hst_list.addAll(response.body());
+                rv.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+                rv.setHasFixedSize(true);
+                rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                adapter = new HighEduAdapter(getActivity(), hst_list);
+                rv.setItemAnimator(new DefaultItemAnimator());
+                rv.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<HigherStudiesModel>> call, Throwable t) {
+
+            }
+        });
 
         return view;
     }

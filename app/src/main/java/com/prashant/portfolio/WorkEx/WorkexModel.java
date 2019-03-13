@@ -1,9 +1,11 @@
-package com.prashant.portfolio.Por;
+package com.prashant.portfolio.WorkEx;
 
 import java.util.ArrayList;
 
-public class PorDC {
+public class WorkexModel {
     String heading, image;
+    public ArrayList<String> roles = new ArrayList<>();
+
 
     public String getHeading() {
         return heading;
@@ -29,13 +31,11 @@ public class PorDC {
         this.roles = roles;
     }
 
-    public ArrayList<String> roles = new ArrayList<>();
-
-    public PorDC(String heading, String image, ArrayList<String> roles) {
+    public WorkexModel(String heading, String image, ArrayList<String> roles) {
         this.heading = heading;
         this.image = image;
         this.roles = roles;
     }
 
-    public PorDC() { }
+    public WorkexModel() { }
 }

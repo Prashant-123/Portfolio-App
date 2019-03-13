@@ -11,15 +11,15 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.prashant.portfolio.R;
-import java.util.ArrayList;
+import java.util.List;
 
 class HighEduAdapter extends RecyclerView.Adapter<HighEduAdapter.ViewHolder> {
 
-    public static ArrayList<HigherStudiesDC> mData;
+    public static List<HigherStudiesModel> mData;
     private LayoutInflater mInflater;
     Context mContext;
 
-    public HighEduAdapter(FragmentActivity context, ArrayList<HigherStudiesDC> arr) {
+    public HighEduAdapter(FragmentActivity context, List<HigherStudiesModel> arr) {
         mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mData = arr;

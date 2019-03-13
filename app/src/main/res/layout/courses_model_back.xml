@@ -20,7 +20,7 @@
 
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewBack"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="27dp"
@@ -32,16 +32,17 @@
                 android:src="@drawable/me"/>
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/c_back_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="22dp"
                 android:layout_marginStart="34dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/futura_medium"
                 android:text="Data Structures &amp; Algorithms"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+                app:layout_constraintStart_toEndOf="@+id/imageViewBack"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -52,9 +53,9 @@
                 android:fontFamily="@font/futura_medium"
                 android:text="Online Course"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView7"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintBottom_toTopOf="@+id/c_institution"
+                app:layout_constraintStart_toEndOf="@+id/imageViewBack"
+                app:layout_constraintTop_toBottomOf="@+id/c_back_name" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -63,15 +64,16 @@
                 android:layout_marginTop="20dp"
                 android:cropToPadding="false"
                 android:padding="8dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/imageViewBack"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewBack"
                 app:srcCompat="@drawable/ic_degree_cap" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/c_institution"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="34dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/futura_medium"
                 android:text="Udemy"
                 android:textColor="@color/black"
@@ -89,7 +91,7 @@
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView4"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/c_institution" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -103,7 +105,7 @@
                 app:srcCompat="@drawable/ic_instructor" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/c_instructor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="33dp"
@@ -124,7 +126,7 @@
                 android:text="Instructor"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView5"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/c_instructor" />
 
             <ImageView
                 android:id="@+id/imageView6"

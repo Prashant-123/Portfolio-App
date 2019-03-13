@@ -1,8 +1,8 @@
 package com.prashant.portfolio.Education;
 
-public class HigherStudiesDC {
+public class HigherStudiesModel {
 
-    public HigherStudiesDC(String institute_name, String course, String post, String yop, String about, String image) {
+    public HigherStudiesModel(String institute_name, String course, String post, String yop, String about, String image) {
         this.institute_name = institute_name;
         this.course = course;
         this.post = post;
@@ -11,7 +11,7 @@ public class HigherStudiesDC {
         this.image = image;
     }
 
-    public HigherStudiesDC() {}
+    public HigherStudiesModel() {}
 
     String institute_name;
     String course;

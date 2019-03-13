@@ -4,23 +4,30 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.prashant.portfolio.R;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import static com.prashant.portfolio.MainActivity.TAG;
 
 class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
 
-    public static ArrayList<CoursesDC> mData;
+    public static List<CoursesModel> mData;
     private LayoutInflater mInflater;
     Context mContext;
     private ItemClickListener mClickListener;
 
-    public CoursesAdapter(FragmentActivity context, ArrayList<CoursesDC> arr) {
+    public CoursesAdapter(FragmentActivity context, List<CoursesModel> arr) {
         mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mData = arr;
@@ -36,12 +43,15 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final CoursesAdapter.ViewHolder holder, int position) {
-//        holder.institute_name.setText(mData.get(holder.getAdapterPosition()).getInstitute_name());
-//        holder.course.setText(mData.get(holder.getAdapterPosition()).getCourse());
-//        holder.position.setText(mData.get(holder.getAdapterPosition()).getPost());
-//        holder.yop.setText(mData.get(holder.getAdapterPosition()).getYop());
-//        holder.about.setText(mData.get(holder.getAdapterPosition()).getPerformance());
-//        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).getImage()).into(holder.image);
+        holder.name.setText("kiyjuthbgdvf");
+        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).image).into(holder.image);
+        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).image).into(holder.front);
+        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).image).into(holder.back);
+        holder.instructor.setText(mData.get(holder.getAdapterPosition()).instructor);
+        holder.institution.setText(mData.get(holder.getAdapterPosition()).institution);
+        holder.name.setText(mData.get(holder.getAdapterPosition()).name);
+
+        Log.i(TAG, "onBindViewHolder: " + holder.instructor.getText());
     }
 
     @Override
@@ -50,9 +60,10 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-//
-//        TextView institute_name, course, position, yop, about;
-//        RoundedImageView image;
+
+        TextView name, institution, instructor;
+        RoundedImageView front, back;
+        ImageView image;
 
         EasyFlipView mEasyFlipView;
 
@@ -60,12 +71,12 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
             super(itemView);
             mEasyFlipView = itemView.findViewById(R.id.flip_card);
             itemView.setOnClickListener(this);
-//            institute_name = itemView.findViewById(R.id.inst_name);
-//            position = itemView.findViewById(R.id.post);
-//            yop = itemView.findViewById(R.id.yop);
-//            course = itemView.findViewById(R.id.course);
-//            about = itemView.findViewById(R.id.performance);
-//            image = itemView.findViewById(R.id.high_ed_pic_model);
+            name = itemView.findViewById(R.id.c_name);
+            institution = itemView.findViewById(R.id.c_institution);
+            instructor = itemView.findViewById(R.id.c_instructor);
+            front = itemView.findViewById(R.id.c_icon);
+            back = itemView.findViewById(R.id.imageViewBack);
+            image = itemView.findViewById(R.id.c_front);
         }
 
         @Override

@@ -17,7 +17,7 @@
             android:layout_marginRight="10dp">
 
             <android.support.design.card.MaterialCardView
-                android:id="@+id/image"
+                android:id="@+id/pro_image"
                 android:layout_width="160dp"
                 android:layout_height="210dp"
                 android:layout_marginStart="0dp"
@@ -37,10 +37,10 @@
                     android:scaleType="centerCrop"
                     app:riv_border_color="#4a034b"
                     app:riv_border_width="2dip"
+                    android:layout_marginStart="10dp"
                     app:riv_corner_radius="5dp" />
 
             </android.support.design.card.MaterialCardView>
-
 
             <View
                 android:id="@+id/view"
@@ -54,7 +54,7 @@
                 android:elevation="10dp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image" />
+                app:layout_constraintTop_toBottomOf="@+id/pro_image" />
 
             <TextView
                 android:id="@+id/no_of_projects"
@@ -211,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:fontFamily="@font/futura"
-                android:text="Curriculum Vitae"
+                android:text="@string/cv"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -225,7 +225,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:fontFamily="@font/futura"
-                android:text="Awards &amp; Achievements"
+                android:text="@string/awards"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
                 android:fontFamily="@font/futura"
-                android:text="Skill Set"
+                android:text="@string/skill_set"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -255,7 +255,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
                 android:fontFamily="@font/futura"
-                android:text="Other Activities &amp; Interests"
+                android:text="@string/interests"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -277,7 +277,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintStart_toEndOf="@+id/pro_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

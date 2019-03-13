@@ -10,9 +10,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.google.gson.GsonBuilder;
 import com.prashant.portfolio.R;
+import com.prashant.portfolio.Utils.API;
+import com.prashant.portfolio.Utils.ApiClient;
 
-import java.util.Set;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.prashant.portfolio.MainActivity.TAG;
 
@@ -25,6 +34,9 @@ public class Education extends Fragment {
     TextView tab_School, tab_HigherStudies, tab_Courses;
     ImageView placeholder;
 
+    String surl, curl, hurl;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,6 +47,7 @@ public class Education extends Fragment {
         viewPager.setAdapter(viewPagerAdapter);
         placeholder = myView.findViewById(R.id.placeholder);
 
+        SetTabImages();
         SetTabLayout(myView);
 
         return myView;
@@ -58,7 +71,9 @@ public class Education extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 Log.i(TAG, "onTabSelected: " + tab.getPosition());
                 switch (tab.getPosition()) {
-                    case 0:
+                    case 0: Glide.with(Education.this).load(surl).transition(DrawableTransitionOptions.withCrossFade()).into(placeholder); break;
+                    case 1: Glide.with(Education.this).load(hurl).transition(DrawableTransitionOptions.withCrossFade()).into(placeholder); break;
+                    case 2: Glide.with(Education.this).load(curl).transition(DrawableTransitionOptions.withCrossFade()).into(placeholder); break;
                 }
             }
 
@@ -70,6 +85,26 @@ public class Education extends Fragment {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }
+        });
+    }
+
+    public void SetTabImages() {
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
+        API profile = retrofit.create(API.class);
+        Call<Placeholder> placeholderCall = profile.placeholder();
+
+        placeholderCall.enqueue(new Callback<Placeholder>() {
+            @Override
+            public void onResponse(Call<Placeholder> call, Response<Placeholder> response) {
+                Glide.with(Education.this).load(response.body().school).transition(DrawableTransitionOptions.withCrossFade()).into(placeholder);
+                surl = response.body().school;
+                curl = response.body().courses;
+                hurl = response.body().hst;
+            }
+            @Override
+            public void onFailure(Call<Placeholder> call, Throwable t) {
             }
         });
     }

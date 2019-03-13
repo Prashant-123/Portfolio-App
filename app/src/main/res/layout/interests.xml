@@ -1,152 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.constraint.ConstraintLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="@font/futura_medium"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="Interests &amp; Hobbies"/>
 
-        <android.support.design.card.MaterialCardView
-            android:id="@+id/card1"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/card2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
-            <ImageView
-                style="@style/Widget.MaterialComponents.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/me" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="bottom"
-                android:fontFamily="@font/futura_medium"
-                android:gravity="center|top"
-                android:padding="1dp"
-                android:text="Web-Dev"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </android.support.design.card.MaterialCardView>
-
-        <android.support.design.card.MaterialCardView
-            android:id="@+id/card2"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="36dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/card1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/card1"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                style="@style/Widget.MaterialComponents.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/me" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="bottom"
-                android:fontFamily="@font/futura_medium"
-                android:gravity="center|top"
-                android:padding="1dp"
-                android:text="Web-Dev"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </android.support.design.card.MaterialCardView>
-
-        <android.support.design.card.MaterialCardView
-            android:id="@+id/card3"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/card4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card1">
-
-            <ImageView
-                android:id="@+id/imageView7"
-                style="@style/Widget.MaterialComponents.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/me" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="bottom"
-                android:fontFamily="@font/futura_medium"
-                android:gravity="center|top"
-                android:padding="1dp"
-                android:text="Web-Dev"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </android.support.design.card.MaterialCardView>
-
-        <android.support.design.card.MaterialCardView
-            android:id="@+id/card4"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="36dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/card3"
-            app:layout_constraintTop_toBottomOf="@+id/card2">
-
-            <ImageView
-                style="@style/Widget.MaterialComponents.CardView"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/me" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="bottom"
-                android:fontFamily="@font/futura_medium"
-                android:gravity="center|top"
-                android:padding="1dp"
-                android:text="Web-Dev"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </android.support.design.card.MaterialCardView>
-
-        <View
-            android:id="@+id/view3"
+        <android.support.design.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card3" />
+            android:id="@+id/int1"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/int_1"/>
 
-    </android.support.constraint.ConstraintLayout>
+        <android.support.design.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:id="@+id/int2"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/int_2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/int3"
+            android:layout_margin="10dp"
+            android:text="@string/int_3"/>
+
+        <android.support.design.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:id="@+id/int4"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/int_4"/>
+
+    </LinearLayout>
+
+    <android.support.design.chip.Chip
+        style="@style/Widget.MaterialComponents.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/int5"
+        android:layout_margin="10dp"
+        android:text="@string/int_5"/>
 
 </LinearLayout>

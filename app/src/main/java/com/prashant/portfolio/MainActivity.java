@@ -1,5 +1,6 @@
 package com.prashant.portfolio;
 
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,10 +21,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.GsonBuilder;
-import com.prashant.portfolio.AboutMe.AboutMeDC;
+import com.prashant.portfolio.AboutMe.AboutMeModel;
 import com.prashant.portfolio.AboutMe.Profile;
 import com.prashant.portfolio.Education.Education;
 import com.prashant.portfolio.Por.Por;
+import com.prashant.portfolio.Projects.Projects;
+import com.prashant.portfolio.Utils.API;
+import com.prashant.portfolio.Utils.ApiClient;
+import com.prashant.portfolio.WorkEx.WorkEx;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
-    public static AboutMeDC aboutmeDC;
+    public static AboutMeModel aboutmeModel;
     ImageView blur_image, user_image;
     ActionBarDrawerToggle toggle;
     public static String TAG = "TAG";
@@ -110,7 +115,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragment = new WorkEx();
                 toolbar.setTitle("Work Experience");
                 break;
-            case R.id.projects: startActivity(new Intent(this, Projects.class)); break;
+            case R.id.projects: fragment = new Projects();
+                toolbar.setTitle("Projects");
+                break;
             case R.id.por:
                 fragment = new Por();
                 toolbar.setTitle("Responsibilities");
@@ -170,23 +177,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
         API profile = retrofit.create(API.class);
-        Call<AboutMeDC> call = profile.aboutMe();
-        call.enqueue(new Callback<AboutMeDC>() {
+        Call<AboutMeModel> call = profile.aboutMe();
+        call.enqueue(new Callback<AboutMeModel>() {
             @Override
-            public void onResponse(Call<AboutMeDC> call, Response<AboutMeDC> response) {
+            public void onResponse(Call<AboutMeModel> call, Response<AboutMeModel> response) {
 
                 displayScreens(R.id.aboutme);
 
                 HideProgressBar();
                 navigationView.getMenu().getItem(0).setChecked(true);
-                aboutmeDC = response.body();
-                Glide.with(MainActivity.this).load(aboutmeDC.profile_pic)
+                aboutmeModel = response.body();
+                Glide.with(MainActivity.this).load(aboutmeModel.profile_pic)
                         .apply(bitmapTransform(new BlurTransformation(20, 1))).into(blur_image);
-                Glide.with(MainActivity.this).load(aboutmeDC.profile_pic).into(user_image);
+                Glide.with(MainActivity.this).load(aboutmeModel.profile_pic).into(user_image);
             }
 
             @Override
-            public void onFailure(Call<AboutMeDC> call, Throwable t) {
+            public void onFailure(Call<AboutMeModel> call, Throwable t) {
                 Log.i(TAG, t.getMessage());
             }
         });

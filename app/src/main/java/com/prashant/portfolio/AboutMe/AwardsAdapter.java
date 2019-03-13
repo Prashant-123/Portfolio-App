@@ -2,27 +2,34 @@ package com.prashant.portfolio.AboutMe;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.design.button.MaterialButton;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.ceylonlabs.imageviewpopup.ImagePopup;
+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 import com.prashant.portfolio.R;
-import com.wajahatkarim3.easyflipview.EasyFlipView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 class AwardsAdapter extends RecyclerView.Adapter<AwardsAdapter.ViewHolder> {
 
-    public static ArrayList<AwardsDC> mData;
+    public static List<AwardsModel> mData;
     private LayoutInflater mInflater;
     Context mContext;
+    MaterialStyledDialog dialog;
 
-    public AwardsAdapter(FragmentActivity context, ArrayList<AwardsDC> arr) {
+    public AwardsAdapter(FragmentActivity context, List<AwardsModel> arr, MaterialStyledDialog dialog) {
         mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mData = arr;
+        this.dialog = dialog;
 
     }
 
@@ -35,12 +42,26 @@ class AwardsAdapter extends RecyclerView.Adapter<AwardsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final AwardsAdapter.ViewHolder holder, int position) {
-//        holder.institute_name.setText(mData.get(holder.getAdapterPosition()).getInstitute_name());
-//        holder.course.setText(mData.get(holder.getAdapterPosition()).getCourse());
-//        holder.position.setText(mData.get(holder.getAdapterPosition()).getPost());
-//        holder.yop.setText(mData.get(holder.getAdapterPosition()).getYop());
-//        holder.about.setText(mData.get(holder.getAdapterPosition()).getPerformance());
-//        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).getImage()).into(holder.image);
+        holder.event_name.setText(mData.get(holder.getAdapterPosition()).getEvent_name());
+        holder.sub_heading.setText(mData.get(holder.getAdapterPosition()).getSub_heading());
+        holder.description.setText(mData.get(holder.getAdapterPosition()).getDescription());
+        Glide.with(holder.itemView).load(mData.get(holder.getAdapterPosition()).getImage()).into(holder.image);
+
+        final ImagePopup imagePopup = new ImagePopup(holder.itemView.getContext());
+        imagePopup.setWindowHeight(800); // Optional
+        imagePopup.setWindowWidth(800); // Optional
+        imagePopup.setFullScreen(true); // Optional
+        imagePopup.setHideCloseIcon(false);  // Optional
+        imagePopup.setImageOnClickClose(true);  // Optional
+        imagePopup.initiatePopupWithPicasso(mData.get(holder.getAdapterPosition()).certificate);
+
+        holder.view_cert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imagePopup.viewPopup();
+                dialog.dismiss();
+            }
+        });
     }
 
     @Override
@@ -49,20 +70,17 @@ class AwardsAdapter extends RecyclerView.Adapter<AwardsAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-//
-//        TextView institute_name, course, position, yop, about;
-//        RoundedImageView image;
-
-        EasyFlipView mEasyFlipView;
+        TextView event_name, sub_heading, description;
+        ImageView image;
+        MaterialButton view_cert;
 
         public ViewHolder(View itemView) {
             super(itemView);
-//            institute_name = itemView.findViewById(R.id.inst_name);
-//            position = itemView.findViewById(R.id.post);
-//            yop = itemView.findViewById(R.id.yop);
-//            course = itemView.findViewById(R.id.course);
-//            about = itemView.findViewById(R.id.performance);
-//            image = itemView.findViewById(R.id.high_ed_pic_model);
+            event_name = itemView.findViewById(R.id.award_heading);
+            sub_heading = itemView.findViewById(R.id.sub_heading);
+            description = itemView.findViewById(R.id.descripiton);
+            image = itemView.findViewById(R.id.award_image);
+            view_cert = itemView.findViewById(R.id.view_cert);
         }
     }
 }

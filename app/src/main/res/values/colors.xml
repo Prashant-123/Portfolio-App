@@ -9,9 +9,14 @@
     <color name="divider">#5F578A</color>
     <color name="transparent">#00000000</color>
     <color name="overlay">#60000000</color>
+    <color name="performance">#2196F3</color>
 
     <color name="degree_overlay">#6B1F44CC</color>
     <color name="year_overlay">#6B1FCC22</color>
+
+    <color name="bgGradientStart">#000000</color>
+    <color name="bgGradientEnd">#d8000000</color>
+    <color name="bgSolidDark">#55000000</color>
 
 
 </resources>

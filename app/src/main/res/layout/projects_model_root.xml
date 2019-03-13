@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wajahatkarim3.easyflipview.EasyFlipView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:flipOnTouch="false"
+    app:flipEnabled="true"
+    app:flipDuration="400"
+    app:flipType="horizontal"
+    android:id="@+id/flip_card"
+    app:flipFrom="right"
+    app:autoFlipBack="true"
+    app:autoFlipBackTime="1000">
+
+    <!-- Back Layout Goes Here -->
+    <include layout="@layout/projects_model_back"/>
+
+    <!-- Front Layout Goes Here -->
+    <include layout="@layout/projects_model_front"/>
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>
