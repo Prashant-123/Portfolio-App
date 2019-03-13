@@ -212,7 +212,7 @@ public class Profile extends Fragment{
         MaterialStyledDialog dialog = new MaterialStyledDialog.Builder(getContext())
                 .setCustomView(view)
                 .setStyle(Style.HEADER_WITH_ICON).setIcon(R.drawable.ic_skills_home)
-                .setHeaderDrawable(R.drawable.me).withDarkerOverlay(true)
+                .setHeaderDrawable(R.drawable.tech_doodle).withDarkerOverlay(true)
                 .withIconAnimation(true)
                 .withDialogAnimation(true, Duration.FAST)
                 .build();
