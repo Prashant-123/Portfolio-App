@@ -50,6 +50,7 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
         holder.instructor.setText(mData.get(holder.getAdapterPosition()).instructor);
         holder.institution.setText(mData.get(holder.getAdapterPosition()).institution);
         holder.name.setText(mData.get(holder.getAdapterPosition()).name);
+        holder.backname.setText(mData.get(holder.getAdapterPosition()).name);
 
         Log.i(TAG, "onBindViewHolder: " + holder.instructor.getText());
     }
@@ -61,7 +62,7 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView name, institution, instructor;
+        TextView name, institution, instructor, backname;
         RoundedImageView front, back;
         ImageView image;
 
@@ -71,6 +72,7 @@ class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.ViewHolder> {
             super(itemView);
             mEasyFlipView = itemView.findViewById(R.id.flip_card);
             itemView.setOnClickListener(this);
+            backname = itemView.findViewById(R.id.c_back_name);
             name = itemView.findViewById(R.id.c_name);
             institution = itemView.findViewById(R.id.c_institution);
             instructor = itemView.findViewById(R.id.c_instructor);

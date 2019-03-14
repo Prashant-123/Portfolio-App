@@ -11,7 +11,7 @@
     android:id="@+id/flip_card"
     app:flipFrom="right"
     app:autoFlipBack="true"
-    app:autoFlipBackTime="1000">
+    app:autoFlipBackTime="10000">
 
     <!-- Back Layout Goes Here -->
     <include layout="@layout/courses_model_back"/>

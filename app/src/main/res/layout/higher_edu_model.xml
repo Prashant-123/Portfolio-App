@@ -123,7 +123,6 @@
             android:elevation="10dp"
             android:scaleType="centerCrop"
             app:riv_corner_radius="15dp"
-            android:src="@drawable/me"
             app:layout_constraintBottom_toBottomOf="@+id/main_card"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/main_card"/>

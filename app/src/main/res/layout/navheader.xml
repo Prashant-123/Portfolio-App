@@ -18,7 +18,6 @@
             android:layout_height="80dp"
             app:riv_corner_radius="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/me"
             android:elevation="40dp"
             android:layout_margin="20dp"
             android:layout_gravity="bottom"/>

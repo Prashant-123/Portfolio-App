@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Utils.SplashScreen">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:civ_border_color="@color/black"
-        android:src="@drawable/me"
-        app:civ_border_width="1dp"
+        android:src="@drawable/ic_portfolio"
+        android:layout_marginLeft="10dp"
         android:layout_gravity="center"/>
 
     <TextView
@@ -23,7 +22,7 @@
         android:fontFamily="@font/raleway"
         android:gravity="center"
         android:lineSpacingExtra="4dp"
-        android:text="Personal \nPortfolio"
+        android:text=" Personal \nPortfolio"
         android:textAllCaps="true"
         android:textColor="@color/grey"
         android:textSize="25sp"

@@ -21,7 +21,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="140dp"
-                android:src="@drawable/me"
                 android:id="@+id/pro_image"
                 android:scaleType="centerCrop"/>
 
@@ -55,7 +54,6 @@
                     android:layout_height="60dp"
                     android:id="@+id/p_icon"
                     app:riv_corner_radius="50dp"
-                    android:src="@drawable/me"
                     android:scaleType="centerCrop"/>
 
                 <LinearLayout

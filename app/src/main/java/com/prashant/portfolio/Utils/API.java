@@ -2,7 +2,6 @@ package com.prashant.portfolio.Utils;
 
 import com.prashant.portfolio.AboutMe.AboutMeModel;
 import com.prashant.portfolio.AboutMe.AwardsModel;
-import com.prashant.portfolio.AboutMe.SkillSetModel;
 import com.prashant.portfolio.Education.CoursesModel;
 import com.prashant.portfolio.Education.HigherStudiesModel;
 import com.prashant.portfolio.Education.Placeholder;
@@ -41,5 +40,5 @@ public interface API {
     Call<List<ProjectsModel>> Projects();
 
     @GET("/skills")
-    Call<List<SkillSetModel>> Skills();
+    Call<String> Skills();
 }

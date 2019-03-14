@@ -47,6 +47,7 @@ public class WorkEx extends Fragment {
         call.enqueue(new Callback<List<WorkexModel>>() {
             @Override
             public void onResponse(Call<List<WorkexModel>> call, Response<List<WorkexModel>> response) {
+                workEx.clear();
                 workEx.addAll(response.body());
                 rv.setHasFixedSize(true);
                 rv.setLayoutManager(new LinearLayoutManager(getContext()));

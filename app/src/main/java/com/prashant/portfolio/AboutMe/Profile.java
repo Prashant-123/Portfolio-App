@@ -19,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -208,7 +207,7 @@ public class Profile extends Fragment{
 
         final List<SkillSetModel> skills = new ArrayList<>();
         final View view = inflater.inflate(R.layout.skill_set, null);
-        final ScrollView rootView = view.findViewById(R.id.skillset_root);
+        final LinearLayout rootView = view.findViewById(R.id.skillset_root);
         MaterialStyledDialog dialog = new MaterialStyledDialog.Builder(getContext())
                 .setCustomView(view)
                 .setStyle(Style.HEADER_WITH_ICON).setIcon(R.drawable.ic_skills_home)
@@ -221,24 +220,23 @@ public class Profile extends Fragment{
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new GsonBuilder().setLenient().create())).build();
         API profile = retrofit.create(API.class);
-        Call<List<SkillSetModel>> call = profile.Skills();
-        call.enqueue(new Callback<List<SkillSetModel>>() {
+        Call<String> call = profile.Skills();
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<List<SkillSetModel>> call, Response<List<SkillSetModel>> response) {
-                skills.addAll(response.body());
-                for(int i=0; i<skills.size(); i++) {
+            public void onResponse(Call<String> call, Response<String> response) {
+                String[] skills = response.body().split(",");
+                for(int i=0; i<skills.length; i++) {
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                     layoutParams.setMargins(30,30,30,30);
                     Chip chip = new Chip(view.getContext());
                     chip.setLayoutParams(layoutParams);
-                    chip.setText(skills.get(i).skill);
-//                    chip.setChipIcon();
+                    chip.setText(skills[i]);
                     rootView.addView(chip);
                 }
             }
 
             @Override
-            public void onFailure(Call<List<SkillSetModel>> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, t.getMessage());
             }
         });
