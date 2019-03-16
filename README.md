@@ -10,7 +10,7 @@
 - [Retrofit](https://www.baeldung.com/retrofit/) - Retrofit is a type-safe HTTP client for Android and Java – developed by Square (Dagger, Okhttp).
 
 <p align="center">
-  <img src = "https://github.com/Prashant-123/Portfolio-App/raw/master/Screenshots/homepage.png" wigth="150" height="350">  
-  <img src = "https://github.com/Prashant-123/Portfolio-App/raw/master/Screenshots/drawer.png" wigth="150" height="350">
+  <img src = "https://raw.githubusercontent.com/Prashant-123/Portfolio-App/master/Screenshots/1.jpg" wigth="150" height="350"> 
+  <img src = "https://raw.githubusercontent.com/Prashant-123/Portfolio-App/master/Screenshots/2.jpg" wigth="150" height="350">   <img src = "https://raw.githubusercontent.com/Prashant-123/Portfolio-App/master/Screenshots/3.jpg" wigth="150" height="350">   <img src = "https://raw.githubusercontent.com/Prashant-123/Portfolio-App/master/Screenshots/4.jpg" wigth="150" height="350">
 </p>
 
