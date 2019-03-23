@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "226108244001-2osrfa2pok2ovdh91gm751590k9144j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prashant.portfolio",
+            "certificate_hash": "a7841253d8da190cdb8860ac894385e26f76494f"
+          }
+        },
+        {
           "client_id": "226108244001-kkak3be1ueqfc5abus7df244sfnr5qne.apps.googleusercontent.com",
           "client_type": 3
         }

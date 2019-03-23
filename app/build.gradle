@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -41,6 +42,9 @@ dependencies {
     implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
     implementation 'com.github.javiersantos:MaterialStyledDialogs:2.1'
     implementation 'com.github.chathuralakmal:AndroidImagePopup:1.2.1'
+
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'com.google.firebase:firebase-config:16.4.0'
 
     //    Retrofit & Helpers
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
